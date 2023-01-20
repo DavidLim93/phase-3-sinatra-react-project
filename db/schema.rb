@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2023_01_02_024645) do
   end
 
   create_table "todos", force: :cascade do |t|
-    t.string "task"
+    t.string "todo"
     t.string "importance"
     t.date "complete_by"
   end

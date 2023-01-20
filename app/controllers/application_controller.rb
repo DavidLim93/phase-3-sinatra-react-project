@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
 
   post '/todos' do
     task = Todos.create(
-      task: params[:task],
+      todo: params[:todo],
       importance: params[:importance],
       complete_by: params[:complete_by],
     )
@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
   patch '/todos/:id' do
     task = Todos.find(params[:id])
     task.update(
-      task: params[:task]
+      todo: params[:todo]
 
     )
     task.to_json
