@@ -35,21 +35,4 @@ class ApplicationController < Sinatra::Base
     task.to_json
   end
 
- 
-  get '/categories' do
-    categories = Category.all
-    categories.to_json
-  end
-
-  get '/categories/:id' do
-    category = Category.find(params[:id])
-    category.to_json
-  end
-
-  patch '/categories/:id' do
-    category = Category.find(params[:id])
-    category.update(params[:category])
-    category.to_json
-  end
-
 end

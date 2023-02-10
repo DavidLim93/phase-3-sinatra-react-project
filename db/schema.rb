@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 2023_02_09_230114) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "is_complete", default: false
+<<<<<<< HEAD
+=======
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+>>>>>>> 11899e66fca47ebe21af6a64cda176dced2d3407
   end
 
 end
