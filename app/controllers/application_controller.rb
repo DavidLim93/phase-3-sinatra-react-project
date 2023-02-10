@@ -35,36 +35,7 @@ class ApplicationController < Sinatra::Base
     task.to_json
   end
 
-  get '/users' do
-    users = User.all
-    users.to_json
-  end
-
-  get '/users/:id' do
-    user = User.find(params[:id])
-    user.to_json
-  end
-
-  post '/users' do 
-    user = User.new(params[:user])
-      user.save
-      user.to_json
-    
-  end
-
-  patch '/users/:id' do
-    user = User.find(params[:id])
-    user && user.update(params[:user])
-      user.to_json
-
-  end
-
-  delete '/users/:id' do
-    user = User.find(params[:id])
-    user.destroy
-    user.to_json
-  end
-
+ 
   get '/categories' do
     categories = Category.all
     categories.to_json
