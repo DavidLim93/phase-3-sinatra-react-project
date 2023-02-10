@@ -10,16 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_02_024645) do
+ActiveRecord::Schema.define(version: 2023_02_09_230114) do
 
   create_table "categories", force: :cascade do |t|
-    t.string "category"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "todos", force: :cascade do |t|
-    t.string "todo"
-    t.string "importance"
-    t.date "complete_by"
+  create_table "tasks", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "priority"
+    t.integer "category_id"
+    t.integer "user_id"
+    t.date "deadline"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_complete", default: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
